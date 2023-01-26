@@ -48,6 +48,7 @@ for (const country of countries1) {
     const createDiv = document.createElement("div"); //Creamos por cada elemento del array, guardado en memoria
     document.body.appendChild(createDiv); //Añadimos el div en el body del DOM
     const createList = document.createElement("li"); // Creamos por cada elemento del array una lista, guardado en memoria
+    createList.setAttribute("class", "modificable");// Añadimos una clase para facilitar el ejercicio 1.6
     createDiv.appendChild(createList); //Añadimos en la posición dentro del div la lista por cada elemento del array
     const tituloH4 = document.createElement("h4"); //Creamos por cada elemento del array el titulo, guardado en memoria
     createList.appendChild(tituloH4); //Añadimos dentro la lista el titulo de cada elemento del array
@@ -80,5 +81,9 @@ boton.addEventListener("click", (event) => {
 
 // 1.6 Basandote en el ejercicio anterior. Crea un botón para cada uno de los elementos de las listas que elimine ese mismo elemento del html.
 
-const newBoton = document.createElement("button");
-document.body.appendChild(newBoton);
+const newList = document.querySelectorAll(".modificable");
+
+for (const list of newList) {
+    const newButton = document.createElement("button");
+    list.appendChild(newButton);
+}
