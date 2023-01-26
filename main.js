@@ -18,19 +18,19 @@ const elementRemove = document.querySelector(".fn-remove-me");
 elementRemove.remove();
 
 
-
-
-
-
-
-
-
-
 // 1.3 Utiliza el array para crear dinamicamente una lista ul > li de elementos en el div de html con el atributo data-function="printHere".
 
 const cars = ['Mazda 6', 'Ford fiesta', 'Audi A4', 'Toyota corola'];
 
+const listaDesordenadaDos = document.createElement("ul"); //Creamos lista desordenada
+const divUno = document.querySelector('[data-function= "printHere"]') //Localizamos el div donde queremos meter la ul
+divUno.appendChild(listaDesordenadaDos); //Metemos el ul en el div que nos pide en el enunciado
 
+for (const car of cars) { //Creamos un bucle para recorrer el array
+    let listaDos = document.createElement("li"); //creamos un li por cada elemento que tenga el array
+    listaDesordenadaDos.appendChild(listaDos); //Por cada elemento que tenga el array añadimos el li dentro del ul
+    listaDos.insertAdjacentHTML("afterbegin", car); //Metemos dentro de cada elemento (li) cada elemento del array
+}
 
 
 
