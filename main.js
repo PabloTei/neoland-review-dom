@@ -34,14 +34,6 @@ for (const car of cars) { //Creamos un bucle para recorrer el array
 
 
 
-
-
-
-
-
-
-
-
 // 1.4 Crea dinamicamente en el html una lista de div que contenga un elemento h4 para el titulo y otro elemento img para la imagen.
 
 const countries1 = [
@@ -52,6 +44,18 @@ const countries1 = [
 	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=5'}
 ];
 
+for (const country of countries1) {
+    const createDiv = document.createElement("div"); //Creamos por cada elemento del array, guardado en memoria
+    document.body.appendChild(createDiv); //Añadimos el div en el body del DOM
+    const createList = document.createElement("li"); // Creamos por cada elemento del array una lista, guardado en memoria
+    createDiv.appendChild(createList); //Añadimos en la posición dentro del div la lista por cada elemento del array
+    const tituloH4 = document.createElement("h4"); //Creamos por cada elemento del array el titulo, guardado en memoria
+    createList.appendChild(tituloH4); //Añadimos dentro la lista el titulo de cada elemento del array
+    const img1 = document.createElement("img"); //Creamos por cada elemento del array una imagen, guardado en memoria
+    createList.appendChild(img1); //Añadimos dentro la lista la imagen de cada elemento del array
+    tituloH4.insertAdjacentHTML("afterbegin", country.title);//Imprimimos el titulo
+    img1.insertAdjacentHTML("afterbegin", `src=${country.imgUrl}`);//Imprimimos la imagen
+}
 
 
 
