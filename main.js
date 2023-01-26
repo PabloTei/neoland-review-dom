@@ -2,16 +2,20 @@
 
 const countries = ['Japón', 'Nicaragua', 'Suiza', 'Australia', 'Venezuela'];
 
+const listaDesordenada = document.createElement("ul");
+document.body.appendChild(listaDesordenada);
 
-
-
-
-
+for (const country of countries) {
+    let lista = document.createElement("li");
+    listaDesordenada.appendChild(lista);
+    lista.insertAdjacentHTML("afterbegin", country);
+}
 
 
 // 1.2 Elimina el elemento que tenga la clase .fn-remove-me.
 
-
+const elementRemove = document.querySelector(".fn-remove-me");
+elementRemove.remove();
 
 
 
