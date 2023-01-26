@@ -86,4 +86,8 @@ const newList = document.querySelectorAll(".modificable");
 for (const list of newList) {
     const newButton = document.createElement("button");
     list.appendChild(newButton);
+    newButton.addEventListener("click", (event) => {
+        list.remove();
+    })
 }
+
