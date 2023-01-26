@@ -54,11 +54,9 @@ for (const country of countries1) {
     const img1 = document.createElement("img"); //Creamos por cada elemento del array una imagen, guardado en memoria
     createList.appendChild(img1); //Añadimos dentro la lista la imagen de cada elemento del array
     tituloH4.insertAdjacentHTML("afterbegin", country.title);//Imprimimos el titulo
-    img1.insertAdjacentHTML("afterbegin", `src=${country.imgUrl}`);//Imprimimos la imagen
+    img1.setAttribute("src", country.imgUrl);
+    img1.insertAdjacentHTML("afterbegin", country.imgUrl);//Imprimimos la imagen
 }
-
-
-
 
 
 
